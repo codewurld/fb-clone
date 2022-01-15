@@ -26,7 +26,7 @@ const Header = () => {
 
             {/* center  */}
             <div className="header_middle">
-                <div className="header_option">
+                <div className="header_option header_option--active">
                     <HomeIcon fontSize="large" />
                 </div>
                 <div className="header_option">
@@ -45,7 +45,7 @@ const Header = () => {
 
             {/* right sidebar widgets */}
             <div className="header_right">
-                <div className="header_info">
+                <div className="header_profile">
                     <Avatar />
                     <h4>profile name</h4>
                 </div>
