@@ -2,6 +2,7 @@
 import './App.css';
 import Header from './components/header/Header';
 import LeftSideBar from './components/leftSideBar/LeftSideBar';
+import Feed from './components/feed/Feed';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
 
       <div className="app_body">
         <LeftSideBar />
-        {/* left sidebar */}
+        <Feed />
         {/* {Center feed} */}
         {/* Widgets --> right sidebar */}
       </div>
