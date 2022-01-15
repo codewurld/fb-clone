@@ -1,4 +1,4 @@
-
+import Girl from '../assets/naija_girl.jpg'
 
 export const storyData = [
     {
@@ -10,7 +10,7 @@ export const storyData = [
     {
         id: 2,
         image: "http",
-        profilePic: "https://unsplash.com/photos/J-D50rg44aw",
+        profilePic: Girl,
         name: "Yinka Awolabi"
     },
     {
