@@ -1,0 +1,18 @@
+.header{
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    background-color: #fff;
+    /* brings to the utmost forefront */
+    z-index: 100;
+    top: 0;
+    box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0, 75)
+
+}
+
+
+/* image inside of headerLeft class */
+.header_left > img {
+    height: 40px;
+}
