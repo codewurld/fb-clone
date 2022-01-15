@@ -1,12 +1,13 @@
 import '../sideBarRow/SidebarRow.css'
-import { Avatar } from '@material-ui/core';
+import { Avatar, Icon } from '@material-ui/core';
 
 
 const SidebarRow = ({ src, Icon, title }) => {
     return (
         <div className="sideBarRow">
             {src && <Avatar src={src} />}
-            <h2>{title}</h2>
+            {Icon && <Icon />}
+            <h4>{title}</h4>
         </div>
     );
 }
