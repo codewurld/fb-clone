@@ -29,9 +29,9 @@
     background-color: #eff2f5;
 }
 
-.postUpdate_top > form > button {
+/* .postUpdate_top > form > button {
     display: none;
-}
+} */
 
 .postUpdate_sender {
     flex: 1;

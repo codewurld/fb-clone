@@ -7,10 +7,12 @@ import { useState } from "react";
 
 const PostUpdate = () => {
 
+    // state change for user input
     const [input, setInput] = useState("")
+    // state change for image upload
     const [image, setImage] = useState("")
 
-
+    // post update function when user submits post
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -21,9 +23,11 @@ const PostUpdate = () => {
             <div className="postUpdate_top">
                 <Avatar />
                 <form>
+                    {/* user status input */}
                     <input
                         value={input} onChange={(e) => setInput(e.target.value)}
                         className="postUpdate_sender" placeholder={"What's on your mind?"} />
+                    {/* user image upload */}
                     <input
                         value={image} onChange={(e) => setImage(e.target.value)}
                         placeholder="Image URL (Optional)" />
@@ -34,6 +38,7 @@ const PostUpdate = () => {
             </div>
 
             <div className="postUpdate_bottom">
+                {/* user media updates - photo, video, emojis */}
                 <div className="postUpdate_option">
                     <VideocamIcon style={{ color: "red" }} />
                     <h2>Live Video</h2>

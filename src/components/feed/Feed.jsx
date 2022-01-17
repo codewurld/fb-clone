@@ -1,6 +1,7 @@
 import '../feed/Feed.css';
 import StoryUpdates from '../storyUpdates/StoryUpdates';
 import PostUpdate from '../postupdate/PostUpdate';
+import Post from '../post/Post';
 
 
 
@@ -10,7 +11,7 @@ const Feed = () => {
             {/* StoryUpdates */}
             <StoryUpdates />
             <PostUpdate />
-            {/* StatusUpdate */}
+            <Post />
         </div>);
 }
 

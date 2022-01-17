@@ -15,6 +15,8 @@ import { Avatar, IconButton } from '@material-ui/core';
 const Header = () => {
     return (
         <div className="header">
+
+            {/* logo goes here */}
             <div className="header_left">
                 <img src={facebook} alt="Facebook logo" />
             </div>
@@ -24,7 +26,7 @@ const Header = () => {
                 <input placeholder="Search Facebook" type="text" />
             </div>
 
-            {/* center  */}
+            {/* center with app options  */}
             <div className="header_middle">
                 <div className="header_option header_option--active">
                     <HomeIcon fontSize="large" />

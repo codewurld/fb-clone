@@ -5,6 +5,7 @@ import { storyData } from '../../data/data';
 
 const Story = ({ image, profilePic, name }) => {
     return (
+        // story image and info
         <div style={{ backgroundImage: `url(${image})` }} className="story">
             <Avatar src={profilePic} className="story_avatar" />
             <h4>{name}</h4>
