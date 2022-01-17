@@ -1,5 +1,6 @@
 import "../post/Post.css";
 import { Avatar } from "@material-ui/core";
+import { storyData } from "../../data/data";
 
 const Post = ({ profilePic, image, username, timestamp, message }) => {
     return (
@@ -7,11 +8,15 @@ const Post = ({ profilePic, image, username, timestamp, message }) => {
 
             {/* post info goes here */}
             <div className="post_top">
+
                 <Avatar src={profilePic} className="profile_avatar" />
+
                 <div className="post_topInfo">
                     <h3>{username}</h3>
-                    <p>{new Date(timestamp?.toDate()).toUTCString()}</p>
+                    <p>time time father time</p>
+
                 </div>
+
             </div>
 
             {/* post content goes here */}
