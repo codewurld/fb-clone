@@ -4,21 +4,29 @@ import Header from './components/header/Header';
 import LeftSideBar from './components/leftSideBar/LeftSideBar';
 import Feed from './components/feed/Feed';
 import RightWidget from './components/rightwidget/RightWidget';
+import Login from './components/login/Login';
 
 function App() {
+  const user = null;
+
+
   return (
     <div className="app">
-      {/* header component */}
-      <Header />
+      {/* if no user, render login page else render profile page*/}
+      {!user ? <Login /> : (
+        <>
+          {/* header component */}
+          < Header />
 
-      <div className="app_body">
-        <LeftSideBar />
-        <Feed />
-        <RightWidget />
-      </div>
+          <div className="app_body">
+            <LeftSideBar />
+            <Feed />
+            <RightWidget />
+          </div>
+        </>
+      )}
 
-
-    </div>
+    </div >
   );
 }
 
