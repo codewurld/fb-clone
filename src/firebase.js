@@ -1,4 +1,10 @@
 
+import firebase from './firebase';
+import { initializeApp } from 'firebase/app';
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+
+
 // put .env file
 
 const firebaseConfig = {
@@ -12,16 +18,16 @@ const firebaseConfig = {
 };
 
 // connect app to firebase
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
 // connect to db
-const db = firebaseApp.firestore();
+const db = getFirestore(app);
 
 // authentication
-const auth = firebase.auth();
+const auth = getAuth();
 
 // authentication provider
-const provider = new firebase.auth.GoogleAuthProvider();
+const provider = new GoogleAuthProvider();
 
 // export
 export { auth, provider };

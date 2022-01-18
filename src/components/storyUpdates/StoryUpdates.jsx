@@ -7,7 +7,9 @@ const StoryUpdates = () => {
     return (
         <div className="storyUpdates">
             <div className="storyUpdatesList">
+                
                 {storyData.map((data) => (
+                    // props passed in story component
                     <Story key={data.id} image={data.image} profilePic={data.profilePic} name={data.name} />
                 ))}
             </div>
