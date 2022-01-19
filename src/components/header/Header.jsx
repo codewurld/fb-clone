@@ -14,6 +14,7 @@ import { Avatar, IconButton } from '@material-ui/core';
 import { useStateValue } from '../../ContextProvider';
 
 const Header = () => {
+    // gets user login detail
     const [{ user }, dispatch] = useStateValue();
 
     return (
@@ -52,7 +53,8 @@ const Header = () => {
             <div className="header_right">
                 <div className="header_profile">
 
-                    <Avatar src={user.photoUrl} />
+                    {/* props from user login */}
+                    <Avatar src={user.photoURL} />
                     <h4>{user.displayName}</h4>
                 </div>
 

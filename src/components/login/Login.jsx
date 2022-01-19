@@ -11,36 +11,28 @@ import { signInWithGoogle } from '../../firebase';
 import { actionTypes } from '../../reducer';
 import { useStateValue } from '../../ContextProvider';
 
-// const sigInWithGoogle = () => {
-//     signInWithPopup(auth, provider).then((result) => {
-//         // pass user cred in data layer
-//         console.log(result)
-//     }).catch((error) => {
-//         console.log(error)
-//     });
-// }
 
 const Login = () => {
 
-    // google sign in pop up
+    const [state, dispatch] = useStateValue();
 
+    // google sign in pop up
     const sigInWithGoogle = () => {
         signInWithPopup(auth, provider).then((result) => {
             // pass user cred in data layer
-            console.log(result)
+            dispatch({
+                type: actionTypes.SET_USER,
+                user: result.user,
+            })
+            console.log(result.user);
         }).catch((error) => {
             console.log(error)
         });
     }
 
-    const [state, dispatch] = useStateValue();
 
 
-    // dispatch({
-    //     type: actionTypes.SET_USER,
-    //     user: result.user,
-    // })
-    // console.log(result.user);
+
 
     return (
         <div className="login">

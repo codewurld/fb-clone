@@ -10,7 +10,8 @@ import { useStateValue } from './ContextProvider';
 
 function App() {
 
-  const user = null;
+  // gets user from context
+  const [{ user }, dispatch] = useStateValue();
 
   return (
     <div className="app">
