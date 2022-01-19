@@ -11,8 +11,11 @@ import ForumIcon from "@material-ui/icons/Forum"
 import NotificationsActiveIcon from "@material-ui/icons/NotificationsActive";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Avatar, IconButton } from '@material-ui/core';
+import { useStateValue } from '../../ContextProvider';
 
 const Header = () => {
+    const [{ user }, dispatch] = useStateValue();
+
     return (
         <div className="header">
 
@@ -48,8 +51,9 @@ const Header = () => {
             {/* right sidebar widgets */}
             <div className="header_right">
                 <div className="header_profile">
-                    <Avatar />
-                    <h4>profile name</h4>
+
+                    <Avatar src={user.photoUrl} />
+                    <h4>{user.displayName}</h4>
                 </div>
 
                 <IconButton>

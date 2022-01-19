@@ -1,15 +1,11 @@
 
 import firebase from './firebase';
 import { initializeApp } from 'firebase/app';
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth, initializeAuth, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword } from "firebase/auth";
+import { browserSessionPersistence, browserPopupRedirectResolver } from '@firebase/auth';
 import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 import { actionTypes } from './reducer';
-// import { useStateValue } from './ContextProvider';
-
-
-
-
-
+import { useStateValue } from './ContextProvider';
 
 
 // put .env file
@@ -27,8 +23,15 @@ const firebaseConfig = {
 // connect app to firebase
 const app = initializeApp(firebaseConfig);
 
+
+// export const auth = initializeAuth(app, {
+//     persistence: browserSessionPersistence,
+//     popupRedirectResolver: browserPopupRedirectResolver,
+// });
+// const auth = getAuth(app);
+
 // connect to db
-const db = getFirestore(app);
+export const db = getFirestore(app);
 
 // authentication
 const auth = getAuth(app);
@@ -39,7 +42,11 @@ const provider = new GoogleAuthProvider();
 // export
 export { auth, provider };
 
-export default db;
+// export default firebase;
+
+
+
+// const [state, dispatch] = useStateValue();
 
 export const signInWithGoogle = () => {
     signInWithPopup(auth, provider).then((result) => {
@@ -49,3 +56,4 @@ export const signInWithGoogle = () => {
         console.log(error)
     });
 }
+

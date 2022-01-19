@@ -4,8 +4,11 @@ import VideocamIcon from '@material-ui/icons/Videocam'
 import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary"
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import { useState } from "react";
+import { useStateValue } from "../../ContextProvider";
 
 const PostUpdate = () => {
+    // gets user login detail
+    const [{ user }, dispatch] = useStateValue();
 
     // state change for user input
     const [input, setInput] = useState("")
@@ -16,6 +19,8 @@ const PostUpdate = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        setInput("");
+        setImage("");
     }
 
     return (
