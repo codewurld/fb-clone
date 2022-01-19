@@ -6,13 +6,16 @@ import Feed from './components/feed/Feed';
 import RightWidget from './components/rightwidget/RightWidget';
 import Login from './components/login/Login';
 
+
+
+
 function App() {
   const user = null;
-
 
   return (
     <div className="app">
       {/* if no user, render login page else render profile page*/}
+
       {!user ? <Login /> : (
         <>
           {/* header component */}
@@ -26,8 +29,12 @@ function App() {
         </>
       )}
 
+
     </div >
   );
 }
+
+
+
 
 export default App;

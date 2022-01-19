@@ -5,16 +5,14 @@ import { Button } from '@material-ui/core';
 import auth from "../../firebase";
 import provider from '../../firebase';
 
+
+import { signInWithGoogle } from '../../firebase';
+
+
+
 const Login = () => {
 
     // signin functions
-
-    const signIn = () => {
-        auth.signInWithPopUp(provider).then(result => {
-            console.log(result)
-        }).catch((error) => alert(error.message));
-    }
-
 
     return (
         <div className="login">
@@ -23,7 +21,7 @@ const Login = () => {
                 <img src={FacebookLogo} className="logo2" alt="" />
                 <p>Facebook helps you connect and share with the people in your life.</p>
             </div>
-            {/* <Button type="submit" onClick={signIn}>Log In</Button> */}
+            <Button type="submit" onClick={signInWithGoogle}>Log In</Button>
         </div>
     );
 }

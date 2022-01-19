@@ -1,7 +1,7 @@
 
 import firebase from './firebase';
 import { initializeApp } from 'firebase/app';
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 
 
@@ -24,7 +24,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // authentication
-const auth = getAuth();
+const auth = getAuth(app);
 
 // authentication provider
 const provider = new GoogleAuthProvider();
@@ -33,3 +33,13 @@ const provider = new GoogleAuthProvider();
 export { auth, provider };
 
 export default db;
+
+// google sign in pop up
+export const signInWithGoogle = () => {
+    signInWithPopup(auth, provider).then((result) => {
+        console.log(result)
+    }).catch((error) => {
+        console.log(error)
+    });
+}
+
