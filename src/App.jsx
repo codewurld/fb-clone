@@ -5,11 +5,10 @@ import LeftSideBar from './components/leftSideBar/LeftSideBar';
 import Feed from './components/feed/Feed';
 import RightWidget from './components/rightwidget/RightWidget';
 import Login from './components/login/Login';
-
-
-
+import { useStateValue } from './ContextProvider';
 
 function App() {
+
   const user = null;
 
   return (

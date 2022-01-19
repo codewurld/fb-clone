@@ -3,6 +3,13 @@ import firebase from './firebase';
 import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import { actionTypes } from './reducer';
+// import { useStateValue } from './ContextProvider';
+
+
+
+
+
 
 
 // put .env file
@@ -34,12 +41,11 @@ export { auth, provider };
 
 export default db;
 
-// google sign in pop up
 export const signInWithGoogle = () => {
     signInWithPopup(auth, provider).then((result) => {
+        // pass user cred in data layer
         console.log(result)
     }).catch((error) => {
         console.log(error)
     });
 }
-
