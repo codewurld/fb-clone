@@ -26,12 +26,12 @@ const PostUpdate = () => {
     return (
         <div className="postUpdate">
             <div className="postUpdate_top">
-                <Avatar />
+                <Avatar src={user.photoUrl} />
                 <form>
                     {/* user status input */}
                     <input
                         value={input} onChange={(e) => setInput(e.target.value)}
-                        className="postUpdate_sender" placeholder={"What's on your mind?"} />
+                        className="postUpdate_sender" placeholder={`What's on your mind ${user.displayName}?`} />
                     {/* user image upload */}
                     <input
                         value={image} onChange={(e) => setImage(e.target.value)}

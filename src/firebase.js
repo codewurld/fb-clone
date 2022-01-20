@@ -3,7 +3,7 @@ import firebase from './firebase';
 import { initializeApp } from 'firebase/app';
 import { getAuth, initializeAuth, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword } from "firebase/auth";
 import { browserSessionPersistence, browserPopupRedirectResolver } from '@firebase/auth';
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { actionTypes } from './reducer';
 import { useStateValue } from './ContextProvider';
 
@@ -24,23 +24,23 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 
-// export const auth = initializeAuth(app, {
-//     persistence: browserSessionPersistence,
-//     popupRedirectResolver: browserPopupRedirectResolver,
-// });
+export const auth = initializeAuth(app, {
+    persistence: browserSessionPersistence,
+    popupRedirectResolver: browserPopupRedirectResolver,
+});
 // const auth = getAuth(app);
 
 // connect to db
 export const db = getFirestore(app);
 
 // authentication
-const auth = getAuth(app);
+// const auth = getAuth(app);
 
 // authentication provider
 const provider = new GoogleAuthProvider();
 
 // export
-export { auth, provider };
+export { provider };
 
 // export default firebase;
 

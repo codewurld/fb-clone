@@ -5,6 +5,7 @@ import ThumbUpIcon from "@material-ui/icons/ThumbUp"
 import { AccountCircle, ChatBubbleOutline, NearMe } from "@material-ui/icons";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 
+// props passed from feed component
 const Post = ({ profilePic, image, username, timestamp, message }) => {
     return (
         <div className="post">
@@ -16,7 +17,7 @@ const Post = ({ profilePic, image, username, timestamp, message }) => {
 
                 <div className="post_topInfo">
                     <h3>{username}</h3>
-                    <p>time time father time</p>
+                    <p>{new Date(timestamp?.toDatae()).toUTCString()}</p>
 
                 </div>
 

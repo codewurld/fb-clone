@@ -5,9 +5,6 @@ import { Button } from '@material-ui/core';
 import { auth } from '../../firebase'
 import { provider } from '../../firebase';
 import { signInWithPopup } from "firebase/auth";
-// import { actionTypes } from './reducer';
-// import { useStateValue } from './ContextProvider';
-import { signInWithGoogle } from '../../firebase';
 import { actionTypes } from '../../reducer';
 import { useStateValue } from '../../ContextProvider';
 
@@ -29,10 +26,6 @@ const Login = () => {
             console.log(error)
         });
     }
-
-
-
-
 
     return (
         <div className="login">

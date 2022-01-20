@@ -2,30 +2,57 @@ import '../feed/Feed.css';
 import StoryUpdates from '../storyUpdates/StoryUpdates';
 import PostUpdate from '../postupdate/PostUpdate';
 import Post from '../post/Post';
+import { useState, useEffect } from 'react';
+import { db } from "../../firebase";
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 
 
 
 const Feed = () => {
+
+    // keeps track of user posts
+    const [posts, setPosts] = useState([]);
+
+    // connects to firebase db collection in fb-clone db
+    // then returns snapshot of data injected in db
+    // const querySnapShot = await getDocs(collection(db, "fb-clone"));
+
+    useEffect(async () => {
+        const querySnapshot = await getDocs(collection(db, "fb-clone"));
+
+
+        setPosts([querySnapshot].map((doc) => ({ key: doc.id, id: doc.id, data: doc.data })
+        ));
+
+    }, [])
+    // console.log(`${doc.id} => ${doc.data()}`)
+
+
+    // collection("fb-clone").get().then((querySnapshot) => {
+    //     querySnapshot.forEach((doc) => {
+    //         console.log(`${doc.id} => ${doc.data()}`);
+    //     });
+    // });
+
+    // db.collection("fb-clone").onSnapShot(snapshot => {
+    //     setPosts(snapshot.docs.map(doc => ({ id: doc.id, data: doc.data() })))
+    // })
+
     return (
         <div className="feed">
             {/* StoryUpdates */}
             <StoryUpdates />
             <PostUpdate />
-            <Post profilePic="https://i.guim.co.uk/img/media/1667e050d3c1380577dba0006e009b1fa62a2eea/0_147_2096_1257/master/2096.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=94c2b0a91b42a4ea9e8a4fcf43835014"
-                message="wow"
-                timeStamp="time is of the essence"
-                username="sango"
-                image="https://images.techopedia.com/images/uploads/istock-1173805290.jpeg?w=800&h=0&mode=max&quality=70&scale=both" />
-            <Post profilePic="https://i.guim.co.uk/img/media/1667e050d3c1380577dba0006e009b1fa62a2eea/0_147_2096_1257/master/2096.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=94c2b0a91b42a4ea9e8a4fcf43835014"
-                message="wow"
-                timeStamp="time is of the essence"
-                username="sango"
-                image="https://images.techopedia.com/images/uploads/istock-1173805290.jpeg?w=800&h=0&mode=max&quality=70&scale=both" />
-            <Post profilePic="https://i.guim.co.uk/img/media/1667e050d3c1380577dba0006e009b1fa62a2eea/0_147_2096_1257/master/2096.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=94c2b0a91b42a4ea9e8a4fcf43835014"
-                message="wow"
-                timeStamp="time is of the essence"
-                username="sango"
-                image="https://images.techopedia.com/images/uploads/istock-1173805290.jpeg?w=800&h=0&mode=max&quality=70&scale=both" />
+            {/* renders posts data from db */}
+            {[posts].map((post) => (
+                <Post
+                    key={post.id}
+                    profilePic={post.profileImage}
+                    message={post.message}
+                    timeStamp={post.timeStamp}
+                    username={post.userName}
+                    image={post.image} />
+            ))}
 
         </div>);
 }
