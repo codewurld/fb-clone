@@ -28,10 +28,15 @@ const PostUpdate = () => {
             <div className="postUpdate_top">
                 <Avatar src={user.photoUrl} />
                 <form>
-                    {/* user status input */}
+                    {/* pass mock data as placeholder */}
                     <input
                         value={input} onChange={(e) => setInput(e.target.value)}
-                        className="postUpdate_sender" placeholder={`What's on your mind ${user.displayName}?`} />
+                        className="postUpdate_sender" placeholder={`What's on your mind Shola?`} />
+                    {/* user status input - to implement later with auth and firebase database*/}
+
+                    {/* <input
+                        value={input} onChange={(e) => setInput(e.target.value)}
+                        className="postUpdate_sender" placeholder={`What's on your mind ${user.displayName}?`} /> */}
                     {/* user image upload */}
                     <input
                         value={image} onChange={(e) => setImage(e.target.value)}

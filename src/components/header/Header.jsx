@@ -12,6 +12,7 @@ import NotificationsActiveIcon from "@material-ui/icons/NotificationsActive";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Avatar, IconButton } from '@material-ui/core';
 import { useStateValue } from '../../ContextProvider';
+import myProf from '../../assets/profPortrait.png';
 
 const Header = () => {
     // gets user login detail
@@ -53,9 +54,13 @@ const Header = () => {
             <div className="header_right">
                 <div className="header_profile">
 
-                    {/* props from user login */}
-                    <Avatar src={user.photoURL} />
-                    <h4>{user.displayName}</h4>
+                    <Avatar src={myProf} />
+                    <h4>Shola Quadri</h4>
+
+                    {/* props from user login - implement later*/}
+
+                    {/* <Avatar src={user.photoURL} />
+                    <h4>{user.displayName}</h4> */}
                 </div>
 
                 <IconButton>

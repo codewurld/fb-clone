@@ -5,7 +5,7 @@ import Post from '../post/Post';
 import { useState, useEffect } from 'react';
 import { db } from "../../firebase";
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
-
+import { storyData } from '../../data/data';
 
 
 const Feed = () => {
@@ -44,7 +44,16 @@ const Feed = () => {
             <StoryUpdates />
             <PostUpdate />
             {/* renders posts data from db */}
-            {[posts].map((post) => (
+            {storyData.map((data) => (
+                // props passed in story component
+                <Post key={data.id} image={data.image} profilePic={data.profilePic} username={data.name}
+                    timeStamp={data.timestamp}
+                    message={data.message} />
+            ))}
+
+            {/* to revisit for dynamic posts with database */}
+
+            {/* {[posts].map((post) => (
                 <Post
                     key={post.id}
                     profilePic={post.profileImage}
@@ -52,7 +61,7 @@ const Feed = () => {
                     timeStamp={post.timeStamp}
                     username={post.userName}
                     image={post.image} />
-            ))}
+            ))} */}
 
         </div>);
 }

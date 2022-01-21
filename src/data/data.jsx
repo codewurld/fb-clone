@@ -15,39 +15,41 @@ export const storyData = [
         image: Meditation,
         profilePic: BlackMale,
         name: "Kamal Washington",
-        message: "Pretty cool huh?",
-        timestamp: "time is of the essence"
+        message: "Namaste",
+        timestamp: new Date('05 October 2011 14:48 UTC').toString()
     },
     {
         id: 2,
-        image: Pool,
-        profilePic: Girl,
-        name: "Yinka Awolabi",
-        message: "Pretty cool huh?",
-        timestamp: "time is of the essence"
-    },
-    {
-        id: 3,
         image: cat,
         profilePic: IndianGirl,
         name: "Rasheedat Singh",
-        message: "Pretty cool huh?",
-        timestamp: "time is of the essence"
+        message: "Feline love to infinity and beyond...",
+        timestamp: new Date().toString()
+    },
+    {
+        id: 3,
+        image: Pool,
+        profilePic: Girl,
+        name: "Yinka Awolabi",
+        message: "My boyfriend is pretty cool. Don't tell him I told you so though. #keepHisEgoInCheck haha",
+        timestamp: new Date().toString()
     },
     {
         id: 4,
         image: Hiking,
         profilePic: WhiteMale,
         name: "James Bell",
-        message: "Pretty cool huh?",
-        timestamp: "time is of the essence"
+        message: "Can't wait until the world opens up so I can travel again. #tbt #outdoors",
+        timestamp: new Date().toString()
     },
     {
         id: 5,
         image: Concert,
         profilePic: JapaneseGuy,
         name: "Ikenna Nakamura",
-        message: "Pretty cool huh?",
-        timestamp: "time is of the essence"
+        message: "At the GiftedChild concert last night at EarTH, Hackney. I just love discovering new bands. ",
+        timestamp: new Date().toString()
+
+
     },
 ]
