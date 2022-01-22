@@ -23,7 +23,7 @@ const Header = () => {
 
             {/* logo goes here */}
             <div className="header_left">
-                <img src={facebook} alt="Facebook logo" />
+                <a href="/"><img src={facebook} alt="Facebook logo" /></a>
             </div>
             {/* search bar */}
             <div className="header_input">

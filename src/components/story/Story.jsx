@@ -2,7 +2,7 @@ import '../story/Story.css';
 import { Avatar } from '@material-ui/core';
 import { storyData } from '../../data/data';
 
-
+// props passed from StoryUpdates
 const Story = ({ image, profilePic, name }) => {
     return (
         // story image and info

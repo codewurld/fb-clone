@@ -7,6 +7,7 @@ import { provider } from '../../firebase';
 import { signInWithPopup } from "firebase/auth";
 import { actionTypes } from '../../reducer';
 import { useStateValue } from '../../ContextProvider';
+import { Link } from 'react-router-dom';
 
 
 const Login = () => {
@@ -31,9 +32,10 @@ const Login = () => {
         <div className="login">
             <div className="login_logo">
                 <img src={Facebook} alt="Facebook Logo" className="logo1" />
-                <img src={FacebookLogo} className="logo2" alt="" />
-                <p>Facebook helps you connect and share with the people in your life.</p>
+
+                {/* <p>Facebook helps you connect and share with the people in your life.</p> */}
             </div>
+
             <Button type="submit" onClick={sigInWithGoogle}>Log In</Button>
         </div>
     );

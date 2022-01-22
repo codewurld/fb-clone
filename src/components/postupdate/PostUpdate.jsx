@@ -5,9 +5,12 @@ import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary"
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import { useState } from "react";
 import { useStateValue } from "../../ContextProvider";
+import myProf from '../../assets/profPortrait.png';
+
+
 
 const PostUpdate = () => {
-    // gets user login detail
+    // gets user login detail from firebase db -> to be implemented later
     const [{ user }, dispatch] = useStateValue();
 
     // state change for user input
@@ -26,12 +29,13 @@ const PostUpdate = () => {
     return (
         <div className="postUpdate">
             <div className="postUpdate_top">
-                <Avatar src={user.photoUrl} />
+                <Avatar src={myProf} />
                 <form>
                     {/* pass mock data as placeholder */}
                     <input
                         value={input} onChange={(e) => setInput(e.target.value)}
                         className="postUpdate_sender" placeholder={`What's on your mind Shola?`} />
+
                     {/* user status input - to implement later with auth and firebase database*/}
 
                     {/* <input

@@ -1,7 +1,7 @@
 import '../sideBarRow/SidebarRow.css'
 import { Avatar, Icon } from '@material-ui/core';
 
-
+// props passed from LeftSideBar component
 const SidebarRow = ({ src, Icon, title }) => {
     return (
         <div className="sideBarRow">

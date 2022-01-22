@@ -47,7 +47,7 @@ const Feed = () => {
             {storyData.map((data) => (
                 // props passed in story component
                 <Post key={data.id} image={data.image} profilePic={data.profilePic} username={data.name}
-                    timeStamp={data.timestamp}
+                    timestamp={new Date().toLocaleDateString()}
                     message={data.message} />
             ))}
 

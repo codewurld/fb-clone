@@ -3,8 +3,8 @@
     place-items: center;
     height: 100vh;
 }
-
-.login > button {
+/* to be reverted to after db login implementation */
+/* .login > button {
     width: 300px;
     background-color: #2e81f4;
     color: #eff2f5;
@@ -12,6 +12,18 @@
 }
 
 .login > button:hover{
+    background-color: #fff;
+    color: #2e81f4;
+} */
+#loginBtn{
+    width: 300px;
+    background-color: #2e81f4;
+    color: #eff2f5;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+#loginBtn:hover{
     background-color: #fff;
     color: #2e81f4;
 }
@@ -22,7 +34,7 @@
 
 .login > div > img {
     object-fit: contain;
-    height: 50px;
+    height: 90px;
 }
 
 
@@ -30,4 +42,9 @@
     display: flex;
     flex-direction: column;
 }
+.login > div > p {
+    margin-top: 90px;
+    text-align: center;
+}
+
 

@@ -9,6 +9,7 @@ import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
 import ExpandMoreOutlined from '@material-ui/icons/ExpandMoreOutlined';
 import Facebook from "../../assets/facebook.png";
 import { useStateValue } from '../../ContextProvider';
+import myProf from '../../assets/profPortrait.png';
 
 const LeftSideBar = () => {
     // gets user login detail
@@ -18,8 +19,10 @@ const LeftSideBar = () => {
     return (
 
         <div className="sidebar">
-
-            <SidebarRow src={user.photoURL} title={user.displayName} />
+            {/* dummy data */}
+            <SidebarRow src={myProf} title="Shola Quadri" />
+            {/* implement later --> dynamic property from db */}
+            {/* <SidebarRow src={user.photoURL} title={user.displayName} /> */}
             <SidebarRow Icon={LocalHospitalIcon} title="COVID-19 Information Center" />
             <SidebarRow Icon={EmojiFlagsIcon} title="Friends" />
             <SidebarRow Icon={ChatIcon} title="Messenger" />

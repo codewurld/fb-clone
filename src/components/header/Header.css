@@ -28,7 +28,7 @@
 }
 
 /* fb logo inside of headerLeft class */
-.header_left > img {
+.header_left > a > img {
     height: 40px;
 }
 
